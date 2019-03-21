@@ -1,0 +1,5 @@
+.headerNavigationBar {
+	display: flex;
+	flex-basis: 35%;
+	overflow: hidden;
+}

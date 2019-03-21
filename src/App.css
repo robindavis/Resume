@@ -1,0 +1,7 @@
+.resumeContainer {
+	background-color: #265077;
+	color: white;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}

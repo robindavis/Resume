@@ -1,0 +1,201 @@
+.rootFooterView {
+	display: flex;
+	flex-basis: 10%;
+	overflow: hidden;
+	border: 2px solid #4CAF50;
+	border-radius: 12px;
+	font-weight: bold;
+}
+
+.rootFooterView:hover {
+	border: 2px solid #FF0000;
+}
+
+@media (min-width: 900px) and (min-height: 500px) {
+	.rootFooterView {
+		font-size: 16px;
+		margin: 5px;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 900px) and (min-height: 700px) {
+	.rootFooterView {
+		font-size: 16px;
+		margin: 4px;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 800px) and (min-height: 700px) {
+	.rootFooterView {
+		font-size: 15px;
+		margin: 4px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 700px) and (min-height: 600px) {
+	.rootFooterView {
+		font-size: 14px;
+		margin: 3px;
+	}
+}
+
+@media (min-width: 450px) and (max-width: 600px) and (min-height: 600px) {
+	.rootFooterView {
+		font-size: 13px;
+		margin: 2px;
+	}
+}
+
+@media (min-width: 350px) and (max-width: 450px) and (min-height: 600px) {
+	.rootFooterView {
+		font-size: 12px;
+		margin: 1px;
+	}
+}
+
+@media (max-width: 350px) and (min-height: 600px)  {
+	.rootFooterView {
+		font-size: 11px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 900px) and (min-height: 600px) and (max-height: 700px) {
+	.rootFooterView {
+		font-size: 15px;
+		margin: 4px;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 800px) and (min-height: 600px) and (max-height: 700px) {
+	.rootFooterView {
+		font-size: 14px;
+		margin: 3px;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 900px) and (min-height: 500px) and (max-height: 600px) {
+	.rootFooterView {
+		font-size: 14px;
+		margin: 4px;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 800px) and (min-height: 500px) and (max-height: 600px) {
+	.rootFooterView {
+		font-size: 13px;
+		margin: 3px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 700px) and (min-height: 500px) and (max-height: 600px) {
+	.rootFooterView {
+		font-size: 11px;
+		margin: 2px;
+	}
+}
+
+@media (min-width: 450px) and (max-width: 600px) and (min-height: 500px) and (max-height: 600px) {
+	.rootFooterView {
+		font-size: 11px;
+		margin: 2px;
+	}
+}
+
+@media (min-width: 900px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 15px;
+		margin: 3px;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 900px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 15px;
+		margin: 3px;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 800px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 13px;
+		margin: 2px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 700px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 11px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 450px) and (max-width: 600px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 9px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 350px) and (max-width: 450px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 9px;
+		margin: 1px;
+	}
+}
+
+@media (max-width: 350px) and (min-height: 400px) and (max-height: 500px) {
+	.rootFooterView {
+		font-size: 9px;
+		margin: 0px;
+	}
+}
+
+@media (min-width: 900px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 12px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 900px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 12px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 800px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 12px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 700px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 11px;
+		margin: 1px;
+	}
+}
+
+@media (min-width: 450px) and (max-width: 600px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 8px;
+		margin: 0px;
+	}
+}
+
+@media (min-width: 350px) and (max-width: 450px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 7px;
+		margin: 0px;
+	}
+}
+
+@media (max-width: 350px) and (max-height: 400px) {
+	.rootFooterView {
+		font-size: 7px;
+		margin: 0px;
+	}
+}

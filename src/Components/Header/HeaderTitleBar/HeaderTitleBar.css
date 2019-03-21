@@ -1,0 +1,5 @@
+.headerTitleBar {
+	display: flex;
+	flex-basis: 65%;
+	overflow: hidden;
+}
