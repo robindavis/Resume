@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
+import LinkDisplay from '../../../Utilities/DOM/LinkDisplay/LinkDisplay';
 import './UserLoginStatus.css';
 
 class UserLoginStatus extends Component {
@@ -11,12 +13,8 @@ class UserLoginStatus extends Component {
   render() {
     return (
       <div className='userLoginStatus'>
-        <div className='userDisplayMessage'>
-        Hi, Guest
-        </div>
-        <div className='loginStatus'>
-        <a href='\' className="loginLink">Log In</a>
-        </div>
+        <TextDisplay text="Hi, Guest" basisWidth="50%"/>
+        <LinkDisplay text="Log In" href="\" basisWidth="50%" />
       </div>
       );
   }

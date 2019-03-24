@@ -10,7 +10,12 @@ class TabButton extends Component {
 
   render() {
     return (
-      <button id={this.props.id} className={this.props.selected?'tabButton selected':'tabButton normal'} style={{flexBasis:this.props.basisWidth}} onClick={this.props.tabChange}>
+      <button 
+        className={this.props.selected?'tabButton selected':'tabButton normal'} 
+        style={{flexBasis:this.props.basisWidth}} 
+        onClick={this.props.tabChange}
+        name={this.props.name}
+      >
         {this.props.name}
       </button>
       );

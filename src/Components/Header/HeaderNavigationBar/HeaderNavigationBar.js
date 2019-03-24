@@ -1,26 +1,32 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import TabButton from '../../../Utilities/DOM/TabButton/TabButton';
-
+import * as RootAction from '../../../GlobalState/Actions/RootAction';
 import './HeaderNavigationBar.css';
+
 
 class HeaderNavigationBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedContent: 0
-    };
+    this.state = {};
   }
 
   onSelectedContentChange = (event) => {
-    this.setState({
-      selectedContent: event.target.id
-    });
+    this.props.changeSelectedTab(event.target.name);
   };
 
   render() {
     let tabNames=['Home','SignIn','Create Profile','View Profile','Search Profile','Profile Settings'];
-    let tabButtonArray = tabNames.map((name,index) => <TabButton tabChange={this.onSelectedContentChange} id={index} key={index} selected={this.state.selectedContent.toString()===index.toString()} name={name} basisWidth={`${(100/tabNames.length).toFixed(3)}%`}/>);
+    let tabButtonArray = tabNames.map((name,index) => (
+      <TabButton 
+        key={index}
+        name={name} 
+        tabChange={this.onSelectedContentChange} 
+        selected={name===this.props.selectedTab} 
+        basisWidth={`${(100/tabNames.length).toFixed(3)}%`}
+      />
+      ));
     return (
       <div className="headerNavigationBar">
         {tabButtonArray}
@@ -29,4 +35,16 @@ class HeaderNavigationBar extends Component {
   }
 }
 
-export default HeaderNavigationBar;
+const mapStateToProps = (state, props) => {
+  return {
+    selectedTab: state.selectedTab
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeSelectedTab: newTabName => dispatch(RootAction.changeSelectedTab(newTabName))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderNavigationBar);

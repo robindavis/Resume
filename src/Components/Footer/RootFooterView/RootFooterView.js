@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+import UserInfoBar from '../UserInfoBar/UserInfoBar';
+import DeveloperContactInfoBar from '../DeveloperContactInfoBar/DeveloperContactInfoBar';
+import ImageDisplay from '../../../Utilities/DOM/ImageDisplay/ImageDisplay';
+import githubLogo from '../../../Images/GithubLogo/Logo.png';
 import './RootFooterView.css';
 
 class RootFooterView extends Component {
@@ -11,7 +15,15 @@ class RootFooterView extends Component {
 	render() {
 		return (
 			<div className='rootFooterView'>
-				RootFooterView
+				<UserInfoBar />
+				<ImageDisplay 
+					src={githubLogo}
+					basisWidth="20%"
+					height="50px" 
+					width="50px" 
+					href="https://github.com/robindavis/Resume"
+				/>
+				<DeveloperContactInfoBar />
 			</div>
 			);
 	}

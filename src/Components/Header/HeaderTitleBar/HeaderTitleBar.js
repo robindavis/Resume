@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import SiteIcon from '../SiteIcon/SiteIcon';
-import TitleText from '../TitleText/TitleText';
 import UserLoginStatus from '../UserLoginStatus/UserLoginStatus';
+import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
 import './HeaderTitleBar.css';
 
 class HeaderTitleBar extends Component {
@@ -15,7 +15,11 @@ class HeaderTitleBar extends Component {
     return (
       <div className="headerTitleBar">
         <SiteIcon />
-        <TitleText />
+        <TextDisplay 
+          text="Heading Title" 
+          basisWidth="60%"
+          verticalPosition="top"
+        />
         <UserLoginStatus />
       </div>
       );
