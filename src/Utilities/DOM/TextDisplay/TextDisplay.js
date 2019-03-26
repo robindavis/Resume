@@ -14,7 +14,8 @@ class TextDisplay extends Component {
         className="textDisplay" 
         style={{flexBasis:this.props.basisWidth,
                 justifyContent:this.props.horizontalPosition||'center',
-                alignItems:this.props.verticalPosition||'center'
+                alignItems:this.props.verticalPosition||'center',
+                fontSize:this.props.fontSize||'2.5vmin'
               }}
       >
         {this.props.text}

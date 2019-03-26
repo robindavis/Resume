@@ -25,6 +25,7 @@ class HeaderNavigationBar extends Component {
         tabChange={this.onSelectedContentChange} 
         selected={name===this.props.selectedTab} 
         basisWidth={`${(100/tabNames.length).toFixed(3)}%`}
+        fontSize="2.3vmin"
       />
       ));
     return (

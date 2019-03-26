@@ -1,16 +1,11 @@
 .imageContainer {
 	display: flex;
 	overflow: hidden;
-	border: 2px solid #4CAF50;
+	border: 0.32vmin solid #4CAF50;
 	border-radius: 12px;
+	margin: 0.3vmin;
 }
 
 .imageContainer:hover {
-	border: 2px solid #FF0000;
-}
-
-.imageDisplay {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	border: 0.32vmin solid #FF0000;
 }

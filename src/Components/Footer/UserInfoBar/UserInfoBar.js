@@ -16,12 +16,15 @@ class UserInfoBar extends Component {
         <TextDisplay 
           text={`Last Login: ${getCurrentDate()} ${getCurrentTime()}`} 
           basisWidth="50%"
-          horizontalPosition="left"
+          horizontalPosition="center"
+          verticalPosition="center"
+          fontSize="2.2vmin"
         />
         <TextDisplay 
           text={`Total Profiles: 0`} 
           basisWidth="50%"
-          horizontalPosition="left"
+          horizontalPosition="center"
+          verticalPosition="center"
         />
       </div>
       );
