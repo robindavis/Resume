@@ -15,8 +15,8 @@ class GithubLogoDisplay extends Component {
         <ImageDisplay 
           src={githubLogo}
           basisWidth="20%"
-          height="8vmin" 
-          width="8vmin" 
+          height="7vmin" 
+          width="7vmin" 
           href="https://github.com/robindavis/Resume"
         />
       );
