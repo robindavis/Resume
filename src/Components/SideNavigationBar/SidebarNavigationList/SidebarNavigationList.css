@@ -1,0 +1,6 @@
+.sidebarNavigationList {
+	display: flex;
+	flex-basis: 93%;
+	border: 0.32vmin solid #4CAF50;
+	border-radius: 12px;
+}

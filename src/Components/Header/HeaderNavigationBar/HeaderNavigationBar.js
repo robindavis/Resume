@@ -38,7 +38,8 @@ class HeaderNavigationBar extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    selectedTab: state.selectedTab
+    selectedTab: state.selectedTab,
+    isDesktop: state.isDesktop
   };
 };
 

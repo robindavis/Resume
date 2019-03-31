@@ -53,7 +53,7 @@ class RootTabContentView extends Component {
         tabView = null;
     }
     return (
-      <div className="rootTabContentView">
+      <div className="rootTabContentView" style={{flexBasis:this.props.isDesktop?'70%':'85%'}}>
         {tabView}
       </div>
       );
@@ -62,7 +62,8 @@ class RootTabContentView extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    selectedTab: state.selectedTab
+    selectedTab: state.selectedTab,
+    isDesktop: state.isDesktop
   };
 };
 

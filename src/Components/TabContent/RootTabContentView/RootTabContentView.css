@@ -1,5 +1,4 @@
 .rootTabContentView {
 	display: flex;
-	flex-basis: 70%;
 	overflow: hidden;
 }

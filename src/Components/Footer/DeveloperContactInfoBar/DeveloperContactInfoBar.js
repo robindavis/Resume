@@ -20,7 +20,12 @@ class DeveloperContactInfoBar extends Component {
       />
       ));
     return (
-      <div className="developerContactInfoBar">
+      <div className="developerContactInfoBar" 
+        style={{
+          flexDirection:this.props.direction||'column',
+          flexBasis: this.props.basisWidth||'40%'
+              }}
+      >
         {developerInformationArray}
       </div>
       );

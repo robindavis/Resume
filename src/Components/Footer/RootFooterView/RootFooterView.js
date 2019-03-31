@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import UserInfoBar from '../UserInfoBar/UserInfoBar';
 import DeveloperContactInfoBar from '../DeveloperContactInfoBar/DeveloperContactInfoBar';
@@ -13,13 +14,28 @@ class RootFooterView extends Component {
 
 	render() {
 		return (
-			<div className='rootFooterView'>
+			<div className='rootFooterView' style={{flexBasis:this.props.isDesktop?'10%':'5%'}}>
+				{this.props.isDesktop ?
+				<>
 				<UserInfoBar />
 				<GithubLogoDisplay />
 				<DeveloperContactInfoBar />
+				</>:
+				<>
+				<DeveloperContactInfoBar
+					direction='row'
+					basisWidth='100%'
+				 />
+				</>}
 			</div>
 			);
 	}
 }
 
-export default RootFooterView;
+const mapStateToProps = (state, props) => {
+  return {
+    isDesktop: state.isDesktop
+  };
+};
+
+export default connect(mapStateToProps)(RootFooterView);

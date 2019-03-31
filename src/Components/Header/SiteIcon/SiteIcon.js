@@ -14,11 +14,11 @@ class SiteIcon extends Component {
         <div className="wrap">
           <div className="cube">
             <div className="front">&clubs;</div>
-            <div className="back">&clubs;</div>
-            <div className="top">&clubs;</div>
-            <div className="bottom">&clubs;</div>
-            <div className="left">&clubs;</div>
-            <div className="right">&clubs;</div>
+            <div className="back">&#9728;</div>
+            <div className="top"> &#9763;</div>
+            <div className="bottom">&#9775;</div>
+            <div className="left">&#9819;</div>
+            <div className="right">&#9836;</div>
           </div>
         </div>
       </div>

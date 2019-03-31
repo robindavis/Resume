@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import SiteIcon from '../SiteIcon/SiteIcon';
+import SideBarButton from '../SideBarButton/SideBarButton';
 import UserLoginStatus from '../UserLoginStatus/UserLoginStatus';
 import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
+import * as RootAction from '../../../GlobalState/Actions/RootAction';
+import { isCurrentDesktopView } from '../../../Utilities/DOM/IsCurrentDesktopView/IsCurrentDesktopView';
 import './HeaderTitleBar.css';
 
 class HeaderTitleBar extends Component {
@@ -13,10 +17,10 @@ class HeaderTitleBar extends Component {
 
   render() {
     return (
-      <div className="headerTitleBar">
-        <SiteIcon />
+      <div className="headerTitleBar" style={{flexBasis:this.props.isDesktop?'65%':'100%'}}>
+        {this.props.isDesktop?<SiteIcon />:<SideBarButton />}
         <TextDisplay 
-          text="Heading Title" 
+          text="Resume Builder" 
           basisWidth="60%"
           verticalPosition="top"
         />
@@ -24,6 +28,30 @@ class HeaderTitleBar extends Component {
       </div>
       );
   }
+
+  updateDesktopOrMobileView = () =>{
+    this.props.changeDesktopMobileView(isCurrentDesktopView());
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDesktopOrMobileView);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDesktopOrMobileView);
+  }
 }
 
-export default HeaderTitleBar;
+const mapStateToProps = (state, props) => {
+  return {
+    isDesktop: state.isDesktop
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeDesktopMobileView: isDesktop => dispatch(RootAction.changeDesktopMobileView(isDesktop))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderTitleBar);

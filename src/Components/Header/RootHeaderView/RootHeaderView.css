@@ -1,6 +1,5 @@
 .rootHeaderView {
 	display: flex;
-	flex-basis: 20%;
 	flex-direction: column;
 	overflow: hidden;
 }

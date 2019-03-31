@@ -1,0 +1,1 @@
+export const isCurrentDesktopView = () => (window.innerWidth>600);
