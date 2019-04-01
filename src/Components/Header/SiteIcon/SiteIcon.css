@@ -1,6 +1,5 @@
 .siteIcon {
 	display: flex;
-	flex-basis: 20%;
 	overflow: hidden;
 	border: 0.32vmin solid #4CAF50;
 	border-radius: 12px;

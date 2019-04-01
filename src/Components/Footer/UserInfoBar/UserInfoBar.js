@@ -12,7 +12,7 @@ class UserInfoBar extends Component {
 
   render() {
     return (
-      <div className="userInfoBar">
+      <div className="userInfoBar" style={{flexBasis:this.props.basisWidth||'40%'}}>
         <TextDisplay 
           text={`Last Login: ${getCurrentDate()} ${getCurrentTime()}`} 
           basisWidth="50%"

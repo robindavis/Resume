@@ -1,6 +1,5 @@
 .userInfoBar {
 	display: flex;
-	flex-basis: 40%;
 	overflow: hidden;
 	flex-direction: column;
 }

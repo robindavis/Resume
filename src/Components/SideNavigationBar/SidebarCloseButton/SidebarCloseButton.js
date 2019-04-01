@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
+import * as RootAction from '../../../GlobalState/Actions/RootAction';
 import './SidebarCloseButton.css';
 
 class SidebarCloseButton extends Component {
@@ -8,12 +10,16 @@ class SidebarCloseButton extends Component {
     this.state = {};
   }
 
+closeSideBar = () => {
+  this.props.changeSideBarStatus(false);
+};
+
   render() {
     return (
       <div className='sidebarCloseButton'>
         <div className='crossIconSpace'></div>
         <div className="crossIconContainer">
-        <div className='crossIcon'>
+        <div className='crossIcon' onClick={this.closeSideBar}>
         &times;
         </div>
         </div>
@@ -22,4 +28,10 @@ class SidebarCloseButton extends Component {
   }
 }
 
-export default SidebarCloseButton;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeSideBarStatus: isSideBarOpened => dispatch(RootAction.changeSideBarStatus(isSideBarOpened))
+  };
+};
+
+export default connect(null,mapDispatchToProps)(SidebarCloseButton);

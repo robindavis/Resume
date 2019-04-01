@@ -31,6 +31,9 @@ class HeaderTitleBar extends Component {
 
   updateDesktopOrMobileView = () =>{
     this.props.changeDesktopMobileView(isCurrentDesktopView());
+    if(this.props.isDesktop) {
+      this.props.changeSideBarStatus(false);
+    }
   }
 
   componentDidMount() {
@@ -50,7 +53,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeDesktopMobileView: isDesktop => dispatch(RootAction.changeDesktopMobileView(isDesktop))
+    changeDesktopMobileView: isDesktop => dispatch(RootAction.changeDesktopMobileView(isDesktop)),
+    changeSideBarStatus: isSideBarOpened => dispatch(RootAction.changeSideBarStatus(isSideBarOpened))
   };
 };
 

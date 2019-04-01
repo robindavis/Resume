@@ -10,7 +10,7 @@ class SiteIcon extends Component {
 
   render() {
     return (
-      <div className='siteIcon'>
+      <div className='siteIcon' style={{flexBasis:this.props.basisWidth||'20%'}}>
         <div className="wrap">
           <div className="cube">
             <div className="front">&clubs;</div>

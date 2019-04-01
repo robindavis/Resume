@@ -1,6 +1,19 @@
 .sidebarNavigationList {
 	display: flex;
 	flex-basis: 93%;
-	border: 0.32vmin solid #4CAF50;
-	border-radius: 12px;
+	flex-direction: column;
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+.upperNavigationElements {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 90%;
+}
+
+.lowerNavigationElements {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 10%;
 }
