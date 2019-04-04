@@ -1,27 +1,26 @@
 import React, {Component} from 'react';
+import classNames from 'classnames';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-import './TabButton.css';
+import { styles } from "./TabButtonStyle";
 
 class TabButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const classes = this.props.classes;
     return (
-      <button 
-        className={this.props.selected?'tabButton selected':'tabButton normal'} 
+      <Button
+        className={this.props.selected?classNames(classes.tabButton,classes.selected):classNames(classes.tabButton,classes.normal)} 
         style={{flexBasis:this.props.basisWidth,
                 fontSize:this.props.fontSize||'2.5vmin'
               }} 
-        onClick={this.props.tabChange}
+        onClick={()=>this.props.tabChange(this.props.name)}
         name={this.props.name}
       >
         {this.props.name}
-      </button>
+      </Button>
       );
   }
-}
+};
 
-export default TabButton;
+export default withStyles(styles)(TabButton);

@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './HeaderNavigationBarStyle';
 import TabButton from '../../../Utilities/DOM/TabButton/TabButton';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
-import './HeaderNavigationBar.css';
-
 
 class HeaderNavigationBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  onSelectedContentChange = (event) => {
-    this.props.changeSelectedTab(event.target.name);
+  onSelectedContentChange = (selectedTabName) => {
+    this.props.changeSelectedTab(selectedTabName);
   };
 
   render() {
+    const { classes } = this.props;
     let tabNames=['Home','SignIn','Create Profile','View Profile','Search Profile','Profile Settings'];
     let tabButtonArray = tabNames.map((name,index) => (
       <TabButton 
@@ -25,13 +22,13 @@ class HeaderNavigationBar extends Component {
         tabChange={this.onSelectedContentChange} 
         selected={name===this.props.selectedTab} 
         basisWidth={`${(100/tabNames.length).toFixed(3)}%`}
-        fontSize="2.3vmin"
+        fontSize="2vmin"
       />
       ));
     return (
-      <div className="headerNavigationBar">
+      <Paper className={classes.headerNavigationBar}>
         {tabButtonArray}
-      </div>
+      </Paper>
       );
   }
 }
@@ -49,4 +46,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderNavigationBar);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(HeaderNavigationBar));

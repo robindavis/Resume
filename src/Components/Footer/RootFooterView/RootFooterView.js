@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './RootFooterViewStyle';
 import UserInfoBar from '../UserInfoBar/UserInfoBar';
 import DeveloperContactInfoBar from '../DeveloperContactInfoBar/DeveloperContactInfoBar';
 import GithubLogoDisplay from '../GithubLogoDisplay/GithubLogoDisplay';
-import './RootFooterView.css';
 
 class RootFooterView extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
 	render() {
+		const { classes } = this.props;
 		return (
-			<div className='rootFooterView' style={{flexBasis:this.props.isDesktop?'10%':'5%'}}>
+			<Paper className={classes.rootFooterView} style={{flexBasis:this.props.isDesktop?'10%':'5%'}}>
 				{this.props.isDesktop ?
 				<>
 				<UserInfoBar />
@@ -27,7 +25,7 @@ class RootFooterView extends Component {
 					basisWidth='100%'
 				 />
 				</>}
-			</div>
+			</Paper>
 			);
 	}
 }
@@ -38,4 +36,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(RootFooterView);
+export default connect(mapStateToProps)(withStyles(styles)(RootFooterView));

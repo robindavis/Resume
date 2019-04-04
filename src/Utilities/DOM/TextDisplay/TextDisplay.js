@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
-import './TextDisplay.css';
+import { styles } from './TextDisplayStyle';
 
 class TextDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     return (
-      <div 
-        className="textDisplay" 
+      <Paper 
+        className={classes.textDisplay} 
         style={{flexBasis:this.props.basisWidth,
                 justifyContent:this.props.horizontalPosition||'center',
                 alignItems:this.props.verticalPosition||'center',
@@ -19,9 +17,9 @@ class TextDisplay extends Component {
               }}
       >
         {this.props.text}
-      </div>
+      </Paper>
       );
   }
 }
 
-export default TextDisplay;
+export default withStyles(styles)(TextDisplay);

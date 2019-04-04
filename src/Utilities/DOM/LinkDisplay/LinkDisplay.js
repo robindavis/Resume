@@ -1,17 +1,14 @@
 import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
-import './LinkDisplay.css';
+import { styles } from './LinkDisplayStyle';
 
 class LinkDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     return (
       <a 
-        className="linkDisplay" 
+        className={classes.linkDisplay} 
         style={{flexBasis:this.props.basisWidth}}
         href={this.props.href}
       >
@@ -21,4 +18,4 @@ class LinkDisplay extends Component {
   }
 }
 
-export default LinkDisplay;
+export default withStyles(styles)(LinkDisplay);

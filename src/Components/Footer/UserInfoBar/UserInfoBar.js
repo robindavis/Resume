@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './UserInfoBarStyle';
 import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
 import { getCurrentDate, getCurrentTime} from '../../../Utilities/Time/CurrentDateTime/CurrentDateTime';
-import './UserInfoBar.css';
 
 class UserInfoBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     return (
-      <div className="userInfoBar" style={{flexBasis:this.props.basisWidth||'40%'}}>
+      <Paper className={classes.userInfoBar} style={{flexBasis:this.props.basisWidth||'40%',backgroundColor:this.props.backgroundColor}}>
         <TextDisplay 
           text={`Last Login: ${getCurrentDate()} ${getCurrentTime()}`} 
           basisWidth="50%"
@@ -26,9 +24,9 @@ class UserInfoBar extends Component {
           horizontalPosition="center"
           verticalPosition="center"
         />
-      </div>
+      </Paper>
       );
   }
 }
 
-export default UserInfoBar;
+export default withStyles(styles)(UserInfoBar);

@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './GithubLogoDisplayStyle';
 import ImageDisplay from '../../../Utilities/DOM/ImageDisplay/ImageDisplay';
 import githubLogo from '../../../Images/GithubLogo/Logo.png';
-import './GithubLogoDisplay.css';
 
 class GithubLogoDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
         <ImageDisplay 
@@ -23,4 +19,4 @@ class GithubLogoDisplay extends Component {
   }
 }
 
-export default GithubLogoDisplay;
+export default withStyles(styles)(GithubLogoDisplay);

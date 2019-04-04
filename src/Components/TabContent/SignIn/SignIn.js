@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
-import './SignIn.css';
+import { styles } from './SignInStyle';
 
 class SignIn extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
 	render() {
+		const { classes } = this.props;
 		return (
-			<div className='signIn'>
+			<Paper className={classes.signIn}>
 				SignIn
-			</div>
+			</Paper>
 			);
 	}
 }
 
-export default SignIn;
+export default withStyles(styles)(SignIn);

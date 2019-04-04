@@ -1,25 +1,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './SideBarButtonStyle';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
-import './SideBarButton.css';
 
 class SideBarButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   toggleSidebarNavigation = () => {
     this.props.changeSideBarStatus(!this.props.isSideBarOpened);
-    console.log('Clicked me');
   };
 
   render() {
+    const { classes } = this.props;
     return (
-      <div className='sideBarButton' onClick={this.toggleSidebarNavigation}>
+      <Paper className={classes.sideBarButton} onClick={this.toggleSidebarNavigation}>
         &#9776; Menu
-      </div>
+      </Paper>
       );
   }
 }
@@ -36,4 +33,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideBarButton);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(SideBarButton));

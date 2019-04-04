@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './RootHeaderViewStyle';
 import HeaderNavigationBar from '../HeaderNavigationBar/HeaderNavigationBar';
 import HeaderTitleBar from '../HeaderTitleBar/HeaderTitleBar';
-import './RootHeaderView.css';
 
 class RootHeaderView extends Component {
 	constructor(props) {
@@ -12,11 +14,12 @@ class RootHeaderView extends Component {
 	}
 
 	render() {
+		const { classes } = this.props;
 		return (
-			<div className="rootHeaderView" style={{flexBasis:this.props.isDesktop?'20%':'10%'}}>
+			<Paper className={classes.rootHeaderView} style={{flexBasis:this.props.isDesktop?'20%':'10%'}}>
 				<HeaderTitleBar />
 				{this.props.isDesktop && <HeaderNavigationBar />}
-			</div>
+			</Paper>
 			);
 	}	
 }
@@ -27,4 +30,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(RootHeaderView);
+export default connect(mapStateToProps)(withStyles(styles)(RootHeaderView));

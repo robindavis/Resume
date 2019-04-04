@@ -1,23 +1,21 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './HeaderTitleBarStyle';
 import SiteIcon from '../SiteIcon/SiteIcon';
 import SideBarButton from '../SideBarButton/SideBarButton';
 import UserLoginStatus from '../UserLoginStatus/UserLoginStatus';
 import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
 import { isCurrentDesktopView } from '../../../Utilities/DOM/IsCurrentDesktopView/IsCurrentDesktopView';
-import './HeaderTitleBar.css';
 
 class HeaderTitleBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     return (
-      <div className="headerTitleBar" style={{flexBasis:this.props.isDesktop?'65%':'100%'}}>
+      <Paper className={classes.headerTitleBar} style={{flexBasis:this.props.isDesktop?'65%':'100%'}}>
         {this.props.isDesktop?<SiteIcon />:<SideBarButton />}
         <TextDisplay 
           text="Resume Builder" 
@@ -25,7 +23,7 @@ class HeaderTitleBar extends Component {
           verticalPosition="top"
         />
         <UserLoginStatus />
-      </div>
+      </Paper>
       );
   }
 
@@ -58,4 +56,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderTitleBar);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(HeaderTitleBar));

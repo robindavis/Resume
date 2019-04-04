@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './RootTabContentViewStyle';
 import CreateProfile from '../CreateProfile/CreateProfile';
 import Home from '../Home/Home';
 import ProfileSettings from '../ProfileSettings/ProfileSettings';
@@ -8,15 +11,9 @@ import SearchProfile from '../SearchProfile/SearchProfile';
 import SignIn from '../SignIn/SignIn';
 import ViewProfile from '../ViewProfile/ViewProfile';
 
-import './RootTabContentView.css';
-
 class RootTabContentView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     let tabView = null;
     switch(this.props.selectedTab) {
       case 'Home':
@@ -53,9 +50,9 @@ class RootTabContentView extends Component {
         tabView = null;
     }
     return (
-      <div className="rootTabContentView" style={{flexBasis:this.props.isDesktop?'70%':'85%'}}>
+      <Paper className={classes.rootTabContentView} style={{flexBasis:this.props.isDesktop?'70%':'85%'}}>
         {tabView}
-      </div>
+      </Paper>
       );
   }
 }
@@ -67,4 +64,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(RootTabContentView);
+export default connect(mapStateToProps)(withStyles(styles)(RootTabContentView));

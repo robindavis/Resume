@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './DeveloperContactInfoBarStyle';
 import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
 import { getElapsedYearCount } from '../../../Utilities/Time/ElapsedTimeCount/ElapsedTimeCount';
-import './DeveloperContactInfoBar.css';
 
 class DeveloperContactInfoBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     const developerInformationText =[`Robin Davis (Exp.: ${getElapsedYearCount('7 Nov 2017')} yrs)`,'robin.dvs007@gmail.com'];
     const developerInformationArray = developerInformationText.map((text,index) => 
       (<TextDisplay 
@@ -20,16 +18,16 @@ class DeveloperContactInfoBar extends Component {
       />
       ));
     return (
-      <div className="developerContactInfoBar" 
+      <Paper className={classes.developerContactInfoBar} 
         style={{
           flexDirection:this.props.direction||'column',
           flexBasis: this.props.basisWidth||'40%'
               }}
       >
         {developerInformationArray}
-      </div>
+      </Paper>
       );
   }
 }
 
-export default DeveloperContactInfoBar;
+export default withStyles(styles)(DeveloperContactInfoBar);

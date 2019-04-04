@@ -1,23 +1,21 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './RootSideNavigationBarStyle';
 import SidebarCloseButton from '../SidebarCloseButton/SidebarCloseButton';
 import SidebarNavigationList from '../SidebarNavigationList/SidebarNavigationList';
-import './RootSideNavigationBar.css';
 
 class RootSideNavigationBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     return (
-      <div className='rootSideNavigationBar'>
+      <Paper className={classes.rootSideNavigationBar}>
         <SidebarCloseButton />
         <SidebarNavigationList />
-      </div>
+      </Paper>
       );
   }
 }
 
-export default RootSideNavigationBar;
+export default withStyles(styles)(RootSideNavigationBar);

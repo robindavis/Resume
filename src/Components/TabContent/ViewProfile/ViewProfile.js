@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
-import './ViewProfile.css';
+import { styles } from './ViewProfileStyle';
 
 class ViewProfile extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
 	render() {
+		const { classes } = this.props;
 		return (
-			<div className='viewProfile'>
+			<Paper className={classes.viewProfile}>
 				ViewProfile
-			</div>
+			</Paper>
 			);
 	}
 }
 
-export default ViewProfile;
+export default withStyles(styles)(ViewProfile);

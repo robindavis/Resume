@@ -1,25 +1,22 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './SidebarCloseButtonStyle';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
-import './SidebarCloseButton.css';
 
 class SidebarCloseButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
 closeSideBar = () => {
   this.props.changeSideBarStatus(false);
 };
 
   render() {
+    const { classes } = this.props;
     return (
-      <div className='sidebarCloseButton'>
-        <div className='crossIconSpace'></div>
-        <div className="crossIconContainer">
-        <div className='crossIcon' onClick={this.closeSideBar}>
+      <div className={classes.sidebarCloseButton}>
+        <div className={classes.crossIconSpace}></div>
+        <div className={classes.crossIconContainer}>
+        <div className={classes.crossIcon} onClick={this.closeSideBar}>
         &times;
         </div>
         </div>
@@ -34,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null,mapDispatchToProps)(SidebarCloseButton);
+export default connect(null,mapDispatchToProps)(withStyles(styles)(SidebarCloseButton));

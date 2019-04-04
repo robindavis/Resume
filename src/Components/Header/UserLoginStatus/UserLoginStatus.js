@@ -1,23 +1,21 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './UserLoginStatusStyle';
 import TextDisplay from '../../../Utilities/DOM/TextDisplay/TextDisplay';
 import LinkDisplay from '../../../Utilities/DOM/LinkDisplay/LinkDisplay';
-import './UserLoginStatus.css';
 
 class UserLoginStatus extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
+    const { classes } = this.props;
     return (
-      <div className='userLoginStatus'>
+      <Paper className={classes.userLoginStatus}>
         <TextDisplay text="Hi, Guest" basisWidth="50%"/>
-        <LinkDisplay text="Log In" href="\" basisWidth="50%" />
-      </div>
+        <LinkDisplay text="Log In" href="\\" basisWidth="50%" />
+      </Paper>
       );
   }
 }
 
-export default UserLoginStatus;
+export default withStyles(styles)(UserLoginStatus);

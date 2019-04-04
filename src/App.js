@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
+import { styles } from './AppStyle';
 import RootHeaderView from './Components/Header/RootHeaderView/RootHeaderView';
 import RootTabContentView from './Components/TabContent/RootTabContentView/RootTabContentView';
 import RootFooterView from './Components/Footer/RootFooterView/RootFooterView';
 import RootSideNavigationBar from './Components/SideNavigationBar/RootSideNavigationBar/RootSideNavigationBar';
-import './App.css';
 
 class App extends Component {
   render() {
+    const { classes } = this.props;
     return (
       <>
-      <div className="resumeContainer">
+      <Paper className={classes.resumeContainer}>
         <RootHeaderView />
         <RootTabContentView />
         <RootFooterView />
-      </div>
+      </Paper>
       {this.props.isSideBarOpened && <RootSideNavigationBar />}
       </>
     );
@@ -28,4 +31,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(withStyles(styles)(App));

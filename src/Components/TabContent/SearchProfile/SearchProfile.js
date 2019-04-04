@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
 
-import './SearchProfile.css';
+import { styles } from './SearchProfileStyle';
 
 class SearchProfile extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
 	render() {
+		const { classes } = this.props;
 		return (
-			<div className='searchProfile'>
+			<Paper className={classes.searchProfile}>
 				SearchProfile
-			</div>
+			</Paper>
 			);
 	}
 }
 
-export default SearchProfile;
+export default withStyles(styles)(SearchProfile);
