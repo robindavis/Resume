@@ -23,6 +23,10 @@ const selectedTheme = basicTheme;
 
 // Export selected Theme Bundle
 export const colorTheme = {
+  mainApp: {
+    textColor: 'black',
+    backgroundColor: 'white',
+  },
   common: {
     textColor: selectedTheme.textColor,
     textBackgroundColor: selectedTheme.textBackgroundColor,
@@ -96,21 +100,7 @@ export const colorTheme = {
     sidebarBackground: selectedTheme.sidebarBackground
   },
   sidebar: {
-    textColor: selectedTheme.textColor,
-    textBackgroundColor: selectedTheme.textBackgroundColor,
-    linkColor: selectedTheme.linkColor,
-    linkBackgroundColor: selectedTheme.linkBackgroundColor,
-    buttonTextColor: selectedTheme.buttonTextColor,
-    buttonBackgroundColor: selectedTheme.buttonBackgroundColor,
-    buttonHoverTextColor: selectedTheme.buttonHoverTextColor,
-    buttonHoverBackgroundColor: selectedTheme.buttonHoverBackgroundColor,
-    buttonSelectedTextColor: selectedTheme.buttonSelectedTextColor,
-    buttonSelectedBackgroundColor: selectedTheme.buttonSelectedBackgroundColor,
-    imageBackgroundColor: selectedTheme.imageBackgroundColor,
-    disableBorder: selectedTheme.disableBorder,
-    borderColor: selectedTheme.borderColor,
-    borderHoverColor: selectedTheme.borderHoverColor,
-    iconBorderColor: selectedTheme.iconBorderColor,
-    sidebarBackground: selectedTheme.sidebarBackground
+    textColor: 'black',
+    backgroundColor: 'orange'
   }
 };

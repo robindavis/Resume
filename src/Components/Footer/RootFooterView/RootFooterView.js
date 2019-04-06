@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import { styles } from './RootFooterViewStyle';
@@ -12,20 +12,28 @@ class RootFooterView extends Component {
 	render() {
 		const { classes } = this.props;
 		return (
-			<Paper className={classes.rootFooterView} style={{flexBasis:this.props.isDesktop?'10%':'5%'}}>
+			<Grid
+				container
+				item
+				className={classes.rootFooterView}
+				style={
+					{flexBasis:this.props.isDesktop?'10%':'5%'}
+				}>
 				{this.props.isDesktop ?
-				<>
-				<UserInfoBar />
-				<GithubLogoDisplay />
-				<DeveloperContactInfoBar />
-				</>:
-				<>
-				<DeveloperContactInfoBar
-					direction='row'
-					basisWidth='100%'
-				 />
-				</>}
-			</Paper>
+					<>
+					<UserInfoBar />
+					<GithubLogoDisplay />
+					<DeveloperContactInfoBar />
+					</>
+					:
+					<>
+					<DeveloperContactInfoBar
+						direction='row'
+						basisWidth='100%'
+					 />
+					</>
+				}
+			</Grid>
 			);
 	}
 }

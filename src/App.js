@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import { styles } from './AppStyle';
@@ -13,22 +12,18 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <>
-      <Paper className={classes.resumeContainer}>
+      <Grid
+        container
+        direction="column"
+        className={classes.resumeContainer}
+        >
         <RootHeaderView />
         <RootTabContentView />
         <RootFooterView />
-      </Paper>
-      {this.props.isSideBarOpened && <RootSideNavigationBar />}
-      </>
+        <RootSideNavigationBar />
+      </Grid>
     );
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return {
-    isSideBarOpened: state.isSideBarOpened
-  };
-};
-
-export default connect(mapStateToProps)(withStyles(styles)(App));
+export default withStyles(styles)(App);

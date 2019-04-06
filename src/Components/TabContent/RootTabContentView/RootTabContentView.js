@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import { styles } from './RootTabContentViewStyle';
@@ -50,9 +50,15 @@ class RootTabContentView extends Component {
         tabView = null;
     }
     return (
-      <Paper className={classes.rootTabContentView} style={{flexBasis:this.props.isDesktop?'70%':'85%'}}>
+      <Grid
+        container
+        item
+        className={classes.rootTabContentView}
+        style={
+          {flexBasis:this.props.isDesktop?'70%':'85%'}
+        }>
         {tabView}
-      </Paper>
+      </Grid>
       );
   }
 }

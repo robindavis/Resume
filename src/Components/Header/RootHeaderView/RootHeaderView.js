@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import { styles } from './RootHeaderViewStyle';
@@ -16,12 +16,19 @@ class RootHeaderView extends Component {
 	render() {
 		const { classes } = this.props;
 		return (
-			<Paper className={classes.rootHeaderView} style={{flexBasis:this.props.isDesktop?'20%':'10%'}}>
+			<Grid
+				item
+				container
+				direction="column"
+				className={classes.rootHeaderView}
+				style={
+					{flexBasis:this.props.isDesktop?'20%':'10%'}
+				}>
 				<HeaderTitleBar />
 				{this.props.isDesktop && <HeaderNavigationBar />}
-			</Paper>
-			);
-	}	
+			</Grid>
+		);
+	}
 }
 
 const mapStateToProps = (state, props) => {

@@ -1,14 +1,23 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Settings from '@material-ui/icons/Settings';
+import Home from '@material-ui/icons/Home';
+import HowToReg from '@material-ui/icons/HowToReg';
+import Edit from '@material-ui/icons/Edit';
+import Portrait from '@material-ui/icons/Portrait';
+import Search from '@material-ui/icons/Search';
 
 import { styles } from './SidebarNavigationListStyle';
-import UserInfoBar from '../../Footer/UserInfoBar/UserInfoBar';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
-import SiteIcon from '../../Header/SiteIcon/SiteIcon';
-import TabButton from '../../../Utilities/DOM/TabButton/TabButton';
 
 class SidebarNavigationList extends Component {
+
   onSelectedContentChange = (selectedTabName) => {
     this.props.changeSelectedTab(selectedTabName);
     this.props.changeSideBarStatus(false);
@@ -16,36 +25,28 @@ class SidebarNavigationList extends Component {
 
   render() {
     const { classes } = this.props;
-    let tabNames=['Home','SignIn','Create Profile','View Profile','Search Profile','Profile Settings'];
-    let tabButtonArray = tabNames.map((name,index) => (
-      <TabButton 
-        key={index}
-        name={name} 
-        tabChange={this.onSelectedContentChange} 
-        selected={name===this.props.selectedTab} 
-        basisWidth={`5%`}
-        fontSize="2.8vmin"
-      />
-      ));
+    const tabNames=['Home','SignIn','Create Profile','View Profile','Search Profile','Profile Settings'];
+    const tabIcons=[<Home />,<HowToReg />,<Edit />,<Portrait />,<Search />,<Settings />];
+    const fullList = tabNames.map((text, index) => (
+      <Fragment key={text}>
+      <ListItem button 
+        onClick={event => this.onSelectedContentChange(text)}
+        onKeyDown={event => this.onSelectedContentChange(text)}
+      >
+        <ListItemIcon>{tabIcons[index]}</ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItem>
+      <Divider />
+      </Fragment>
+    ));
+
     return (
-      <div className={classes.sidebarNavigationList}>
-      <div className={classes.upperNavigationElements}>
-      <SiteIcon basisWidth="15%"/>
-      {tabButtonArray}
-      </div>
-      <div className={classes.lowerNavigationElements}>
-      <UserInfoBar basisWidth="100%" backgroundColor="inherit"/>
-      </div>
-      </div>
-      );
+    <div className={classes.listContainer}>
+      <List className={classes.list}> {fullList} </List>
+    </div>    
+    );
   }
 }
-
-const mapStateToProps = (state, props) => {
-  return {
-    selectedTab: state.selectedTab
-  };
-};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -54,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(SidebarNavigationList));
+export default connect(null, mapDispatchToProps)(withStyles(styles)(SidebarNavigationList));

@@ -1,23 +1,14 @@
 import { colorTheme } from '../../../ColorThemeCenter/ColorThemeCenter';
+import { centralDimension } from '../../../CentralCSS/Dimension/Dimension';
 
 export const styles ={
-	'sidebarNavigationList': {
-	display: 'flex',
-	flexBasis: '93%',
-	flexDirection: 'column',
-	overflow: 'hidden',
-	justifyContent: 'space-between',
-	backgroundColor: colorTheme.common.sidebarBackground
-},
-'upperNavigationElements': {
-	display: 'flex',
-	flexDirection: 'column',
-	flexBasis: '90%'
-},
-'lowerNavigationElements': {
-	display: 'flex',
-	flexDirection: 'column',
-	flexBasis: '10%',
-	backgroundColor: colorTheme.common.sidebarBackground
-}
+	list: {
+		width: centralDimension.sidebar.width,
+		color: colorTheme.sidebar.textColor,
+		backgroundColor: colorTheme.sidebar.backgroundColor
+	},
+  listContainer: {
+    height: centralDimension.sidebar.height,
+    backgroundColor: colorTheme.sidebar.backgroundColor
+  }
 };
