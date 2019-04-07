@@ -5,5 +5,9 @@ export const centralDimension = {
   sidebar: {
     height: 'inherit',
     width: 'auto'
+  },
+  header: {
+    height: '100%',
+    indicatorWidth: '5px'
   }
 };

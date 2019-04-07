@@ -4,15 +4,12 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import { styles } from './RootHeaderViewStyle';
-import HeaderNavigationBar from '../HeaderNavigationBar/HeaderNavigationBar';
-import HeaderTitleBar from '../HeaderTitleBar/HeaderTitleBar';
+import HeaderTitleView from '../HeaderTitleView/HeaderTitleView';
+import HeaderTabNavigationView from '../HeaderTabNavigationView/HeaderTabNavigationView';
+import { isCurrentDesktopView } from '../../../Utilities/DOM/IsCurrentDesktopView/IsCurrentDesktopView';
+import * as RootAction from '../../../GlobalState/Actions/RootAction';
 
 class RootHeaderView extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-
 	render() {
 		const { classes } = this.props;
 		return (
@@ -24,10 +21,25 @@ class RootHeaderView extends Component {
 				style={
 					{flexBasis:this.props.isDesktop?'20%':'10%'}
 				}>
-				<HeaderTitleBar />
-				{this.props.isDesktop && <HeaderNavigationBar />}
+				<HeaderTitleView />
+				{this.props.isDesktop && <HeaderTabNavigationView />}
 			</Grid>
 		);
+	}
+
+	updateDesktopOrMobileView = () =>{
+	  this.props.changeDesktopMobileView(isCurrentDesktopView());
+	  if(this.props.isDesktop) {
+	    this.props.changeSideBarStatus(false);
+	  }
+	}
+
+	componentDidMount() {
+	  window.addEventListener("resize", this.updateDesktopOrMobileView);
+	}
+
+	componentWillUnmount() {
+	  window.removeEventListener("resize", this.updateDesktopOrMobileView);
 	}
 }
 
@@ -37,4 +49,11 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default connect(mapStateToProps)(withStyles(styles)(RootHeaderView));
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeDesktopMobileView: isDesktop => dispatch(RootAction.changeDesktopMobileView(isDesktop)),
+    changeSideBarStatus: isSideBarOpened => dispatch(RootAction.changeSideBarStatus(isSideBarOpened))
+  };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(withStyles(styles)(RootHeaderView));

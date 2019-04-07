@@ -32,6 +32,7 @@ class SidebarNavigationList extends Component {
       <ListItem button 
         onClick={event => this.onSelectedContentChange(text)}
         onKeyDown={event => this.onSelectedContentChange(text)}
+        className={this.props.selectedTab===text?classes.selectedItem:''}
       >
         <ListItemIcon>{tabIcons[index]}</ListItemIcon>
         <ListItemText primary={text} />
@@ -48,6 +49,12 @@ class SidebarNavigationList extends Component {
   }
 }
 
+const mapStateToProps = (state, props) => {
+  return {
+    selectedTab: state.selectedTab
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     changeSelectedTab: newTabName => dispatch(RootAction.changeSelectedTab(newTabName)),
@@ -55,4 +62,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(SidebarNavigationList));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(SidebarNavigationList));
