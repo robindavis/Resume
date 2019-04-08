@@ -8,6 +8,6 @@ export const centralDimension = {
   },
   header: {
     height: '100%',
-    indicatorWidth: '5px'
+    indicatorWidth: '3px'
   }
 };

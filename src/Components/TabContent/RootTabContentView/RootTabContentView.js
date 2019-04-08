@@ -8,7 +8,7 @@ import CreateProfile from '../CreateProfile/CreateProfile';
 import Home from '../Home/Home';
 import ProfileSettings from '../ProfileSettings/ProfileSettings';
 import SearchProfile from '../SearchProfile/SearchProfile';
-import SignIn from '../SignIn/SignIn';
+import AboutDeveloper from '../AboutDeveloper/AboutDeveloper';
 import ViewProfile from '../ViewProfile/ViewProfile';
 
 class RootTabContentView extends Component {
@@ -21,9 +21,9 @@ class RootTabContentView extends Component {
           tabView = <Home />;
           break;
         }
-      case 'SignIn':
+      case 'About Developer':
         {
-          tabView = <SignIn />;
+          tabView = <AboutDeveloper />;
           break;
         }
       case 'Create Profile':
@@ -55,7 +55,7 @@ class RootTabContentView extends Component {
         item
         className={classes.rootTabContentView}
         style={
-          {flexBasis:this.props.isDesktop?'70%':'85%'}
+          {flex:this.props.isDesktop?'1':'1'}
         }>
         {tabView}
       </Grid>

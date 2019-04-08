@@ -1,5 +1,5 @@
 export const styles = {
-  'signIn': {
+  'AboutDeveloper': {
   border: '0.32vmin solid black',
   width: '100%',
   borderRadius: '12px',

@@ -19,7 +19,7 @@ class RootHeaderView extends Component {
 				direction="column"
 				className={classes.rootHeaderView}
 				style={
-					{flexBasis:this.props.isDesktop?'20%':'10%'}
+					{flex:this.props.isDesktop?'0 0 100px':'0 0 50px'}
 				}>
 				<HeaderTitleView />
 				{this.props.isDesktop && <HeaderTabNavigationView />}

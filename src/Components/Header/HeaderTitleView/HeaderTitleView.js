@@ -37,7 +37,7 @@ class HeaderTitleView extends Component {
       <AppBar
         position="static"
         className={classes.titleBarContainer}
-        style={{flexBasis:(this.props.isDesktop)?'50%':'100%'}}
+        style={{flexBasis:(this.props.isDesktop)?'40%':'100%'}}
       >
         <Toolbar
           className={classes.titleToolBarContainer}

@@ -3,7 +3,7 @@ import { centralDimension } from '../../../CentralCSS/Dimension/Dimension';
 
 export const styles = {
   navBarContainer: {
-    flexBasis: '50%',
+    flexBasis: '60%',
     overflow: 'hidden'
   },
   navBarWrapper: {
@@ -24,17 +24,24 @@ export const styles = {
     overflow: 'hidden',
     color: centralColor.header.navBar.textColor,
     backgroundColor: centralColor.header.navBar.backgroundColor,
-    opacity: '1'
+    opacity: '1',
+    alignSelf: 'center',
+    fontSize:'14px'
   },
   selectedTabBarItem: {
     height: centralDimension.header.height,
     overflow: 'hidden',
     color: centralColor.header.navBar.selectedTabTextColor,
     backgroundColor: centralColor.header.navBar.selectedTabBackgroundColor,
-    opacity: '1'
+    opacity: '1',
+    alignSelf: 'center',
+    fontSize:'13px'
   },
   indicator:{
     height: centralDimension.header.indicatorWidth,
     backgroundColor: centralColor.header.navBar.indicatorColor
+  },
+  tabIcon: {
+    fontSize: '17px'
   }
 };

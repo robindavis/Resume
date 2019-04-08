@@ -5,7 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from './AppStyle';
 import RootHeaderView from './Components/Header/RootHeaderView/RootHeaderView';
 import RootTabContentView from './Components/TabContent/RootTabContentView/RootTabContentView';
-import RootFooterView from './Components/Footer/RootFooterView/RootFooterView';
 import RootSideNavigationBar from './Components/SideNavigationBar/RootSideNavigationBar/RootSideNavigationBar';
 
 class App extends Component {
@@ -19,7 +18,6 @@ class App extends Component {
         >
         <RootHeaderView />
         <RootTabContentView />
-        <RootFooterView />
         <RootSideNavigationBar />
       </Grid>
     );

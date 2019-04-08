@@ -15,7 +15,7 @@ export const centralColor = {
       backgroundColor: 'orange',
       selectedTabTextColor: 'black',
       selectedTabBackgroundColor: '#FF8C00',
-      indicatorColor: 'red'
+      indicatorColor: 'black'
     }
   },
   sidebar: {

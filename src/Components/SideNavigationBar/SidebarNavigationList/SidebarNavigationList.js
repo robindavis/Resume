@@ -8,10 +8,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Settings from '@material-ui/icons/Settings';
 import Home from '@material-ui/icons/Home';
-import HowToReg from '@material-ui/icons/HowToReg';
 import Edit from '@material-ui/icons/Edit';
 import Portrait from '@material-ui/icons/Portrait';
 import Search from '@material-ui/icons/Search';
+import AirlineSeatReclineNormal from '@material-ui/icons/AirlineSeatReclineNormal';
 
 import { styles } from './SidebarNavigationListStyle';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
@@ -25,8 +25,8 @@ class SidebarNavigationList extends Component {
 
   render() {
     const { classes } = this.props;
-    const tabNames=['Home','SignIn','Create Profile','View Profile','Search Profile','Profile Settings'];
-    const tabIcons=[<Home />,<HowToReg />,<Edit />,<Portrait />,<Search />,<Settings />];
+    const tabNames=['Home','Create Profile','View Profile','Search Profile','Profile Settings','About Developer'];
+    const tabIcons=[<Home />,<Edit />,<Portrait />,<Search />,<Settings />,<AirlineSeatReclineNormal />];
     const fullList = tabNames.map((text, index) => (
       <Fragment key={text}>
       <ListItem button 
