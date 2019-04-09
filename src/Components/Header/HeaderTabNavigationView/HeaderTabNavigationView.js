@@ -48,7 +48,6 @@ class HeaderTabNavigationView extends Component {
               label={text}
               key={index}
               className={selectedTabIndex===index?classes.selectedTabBarItem:classes.normalTabBarItem}
-              style={{flexBasis:`${(100/this.tabNames.length).toFixed(3)}%`}}
             />
           )
         }

@@ -26,7 +26,7 @@ export const styles = {
     backgroundColor: centralColor.header.navBar.backgroundColor,
     opacity: '1',
     alignSelf: 'center',
-    fontSize:'14px'
+    fontSize: centralDimension.header.normalTabFontSize
   },
   selectedTabBarItem: {
     height: centralDimension.header.height,
@@ -35,13 +35,13 @@ export const styles = {
     backgroundColor: centralColor.header.navBar.selectedTabBackgroundColor,
     opacity: '1',
     alignSelf: 'center',
-    fontSize:'13px'
+    fontSize: centralDimension.header.selectedTabFontSize
   },
   indicator:{
     height: centralDimension.header.indicatorWidth,
     backgroundColor: centralColor.header.navBar.indicatorColor
   },
   tabIcon: {
-    fontSize: '17px'
+    fontSize: centralDimension.header.tabIconFontSize
   }
 };

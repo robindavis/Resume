@@ -14,11 +14,11 @@ export const styles ={
   selectedItem: {
     color: centralColor.sidebar.selectedItemTextColor,
     backgroundColor: centralColor.sidebar.selectedItemBackgroundColor,
-    borderBottom: `3px solid ${centralColor.sidebar.selectedItemBorder}`,
+    borderBottom: `${centralDimension.sidebar.borderWidth} solid ${centralColor.sidebar.selectedItemBorder}`,
     '&:hover':{
       color: centralColor.sidebar.selectedItemTextColor,
       backgroundColor: centralColor.sidebar.selectedItemBackgroundColor,
-      borderBottom: `3px solid ${centralColor.sidebar.selectedItemBorder}`
+      borderBottom: `${centralDimension.sidebar.borderWidth} solid ${centralColor.sidebar.selectedItemBorder}`
     }
   }
 };

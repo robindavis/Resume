@@ -1,15 +1,36 @@
 export const styles = {
-  'AboutDeveloper': {
-  border: '0.32vmin solid black',
+  AboutDeveloper: {
   width: '100%',
-  borderRadius: '12px',
-  fontWeight: 'bold',
-  fontSize: '2.5vmin',
-  margin: '0.3vmin',
+  fontSize: '14px',
   backgroundColor: '#fff176',
   color: 'black',
-  '&:hover': {
-     border: '0.32vmin solid #FF0000'
-  }
-}
+ },
+ avatar: {
+  width: '150px',
+  height: '150px'
+ },
+ avatarContainer: {
+  width: 'auto',
+  marginTop: '5px'
+ },
+ avatarText: {
+  fontWeight: 'bold'
+ },
+ profileDescriptionContainer: {
+  marginTop: '60px'
+ },
+ profileDescriptionRow: {
+  marginTop: '3px'
+ },
+ column1: {
+  flexGrow: 1,
+  width: 'auto',
+  fontWeight: 'bold',
+  fontSize: '16px'
+ },
+ column2: {
+  flexGrow: 1,
+  width: 'auto',
+  fontSize: '16px'
+ }
 };

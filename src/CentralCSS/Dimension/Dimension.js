@@ -4,10 +4,14 @@ export const centralDimension = {
   },
   sidebar: {
     height: 'inherit',
-    width: 'auto'
+    width: 'auto',
+    borderWidth: '3px'
   },
   header: {
     height: '100%',
-    indicatorWidth: '3px'
+    indicatorWidth: '3px',
+    normalTabFontSize: '14px',
+    selectedTabFontSize: '14px',
+    tabIconFontSize: '17px'
   }
 };
