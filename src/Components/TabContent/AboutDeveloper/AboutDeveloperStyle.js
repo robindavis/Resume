@@ -11,13 +11,14 @@ export const styles = {
  },
  avatarContainer: {
   width: 'auto',
-  marginTop: '5px'
+  marginTop: '10px'
  },
  avatarText: {
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  textAlign: 'center'
  },
  profileDescriptionContainer: {
-  marginTop: '60px'
+  marginTop: '20px'
  },
  profileDescriptionRow: {
   marginTop: '3px'
@@ -32,5 +33,74 @@ export const styles = {
   flexGrow: 1,
   width: 'auto',
   fontSize: '16px'
+ },
+ techStackContainer: {
+  width: '70%',
+  marginTop: '60px',
+  overflow: 'hidden'
+ },
+ techStackHeading: {
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: '30px'
+ },
+ techStackItem: {
+  flexGrow: '1',
+  width: 'auto'
+ },
+ techStackLogo: {
+  height: '106px'
+ },
+ techStackItemContainer: {
+  flexWrap: 'wrap',
+  fontWeight: 'bold'
+ },
+ onlineConnectContainer: {
+  width: '30%',
+  marginTop: '60px',
+  marginBottom: '20px',
+  overflow: 'hidden'
+ },
+ onlineConnectHeading: {
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: '30px',
+  marginBottom: '5px'
+ },
+ onlineConnectItem: {
+  flexGrow: '1',
+  width: 'auto'
+ },
+ onlineConnectLogo: {
+  height: '50px',
+  margin: '3px'
+ },
+ onlineConnnectItemContainer: {
+  flexWrap: 'wrap',
+  fontWeight: 'bold'
+ },
+ sourceCodeContainer: {
+  width: '15%',
+  marginTop: '60px',
+  marginBottom: '20px',
+  overflow: 'hidden'
+ },
+ sourceCodeHeading: {
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: '30px',
+  marginBottom: '5px'
+ },
+ sourceCodeItem: {
+  flexGrow: '1',
+  width: 'auto'
+ },
+ sourceCodeLogo: {
+  height: '50px',
+  margin: '3px'
+ },
+ sourceCodeItemContainer: {
+  flexWrap: 'wrap',
+  fontWeight: 'bold'
  }
 };
