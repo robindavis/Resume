@@ -24,5 +24,11 @@ export const centralColor = {
     selectedItemTextColor: 'black',
     selectedItemBackgroundColor: '#FF8C00',
     selectedItemBorder: 'red'
+  },
+  tabContent: {
+    aboutDeveloper: {
+      textColor: 'black',
+      backgroundColor: '#fff176'
+    }
   }
 };

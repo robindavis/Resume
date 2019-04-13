@@ -13,5 +13,43 @@ export const centralDimension = {
     normalTabFontSize: '14px',
     selectedTabFontSize: '14px',
     tabIconFontSize: '17px'
+  },
+  tabContent: {
+    aboutDeveloper: {
+      outerMainContainer: {
+        width: '100%',
+        fontSize: '14px'
+      },
+      avatarContainer: {
+        width: 'auto',
+        marginTop: '10px',
+        profileWidth: '150px',
+        profileHeight: '150px'
+      },
+      techStackContainer: {
+        marginTop: '60px',
+        fontSize: '30px',
+        itemWidth: 'auto',
+        logoHeight: '106px'
+      },
+      onlineConnectContainer: {
+        marginTop: '60px',
+        marginBottom: '20px',
+        fontSize: '30px',
+        headingMarginBottom: '5px',
+        itemWidth: 'auto',
+        logoHeight: '50px',
+        logoMargin: '3px'
+      },
+      sourceCodeContainer: {
+        marginTop: '60px',
+        marginBottom: '20px',
+        fontSize: '30px',
+        headingMarginBottom: '5px',
+        itemWidth: 'auto',
+        logoHeight: '50px',
+        logoMargin: '3px'
+      }
+    }
   }
 };

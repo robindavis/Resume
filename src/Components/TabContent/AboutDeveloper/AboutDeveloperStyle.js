@@ -1,100 +1,86 @@
+import { centralColor } from '../../../CentralCSS/Color/Color';
+import { centralDimension } from '../../../CentralCSS/Dimension/Dimension';
+
 export const styles = {
   AboutDeveloper: {
-  width: '100%',
-  fontSize: '14px',
-  backgroundColor: '#fff176',
-  color: 'black',
- },
+    width: centralDimension.tabContent.aboutDeveloper.outerMainContainer.width,
+    fontSize: centralDimension.tabContent.aboutDeveloper.outerMainContainer.fontSize,
+    backgroundColor: centralColor.tabContent.aboutDeveloper.backgroundColor,
+    color: centralColor.tabContent.aboutDeveloper.textColor
+  },
  avatar: {
-  width: '150px',
-  height: '150px'
+  width: centralDimension.tabContent.aboutDeveloper.avatarContainer.profileWidth,
+  height: centralDimension.tabContent.aboutDeveloper.avatarContainer.profileHeight
  },
  avatarContainer: {
-  width: 'auto',
-  marginTop: '10px'
+  width: centralDimension.tabContent.aboutDeveloper.avatarContainer.width,
+  marginTop: centralDimension.tabContent.aboutDeveloper.avatarContainer.marginTop
  },
  avatarText: {
   fontWeight: 'bold',
   textAlign: 'center'
  },
- profileDescriptionContainer: {
-  marginTop: '20px'
- },
- profileDescriptionRow: {
-  marginTop: '3px'
- },
- column1: {
-  flexGrow: 1,
-  width: 'auto',
-  fontWeight: 'bold',
-  fontSize: '16px'
- },
- column2: {
-  flexGrow: 1,
-  width: 'auto',
-  fontSize: '16px'
- },
  techStackContainer: {
-  marginTop: '60px',
+  marginTop: centralDimension.tabContent.aboutDeveloper.techStackContainer.marginTop,
   overflow: 'hidden'
  },
  techStackHeading: {
   fontWeight: 'bold',
   textAlign: 'center',
-  fontSize: '30px'
+  fontSize: centralDimension.tabContent.aboutDeveloper.techStackContainer.fontSize
  },
  techStackItem: {
   flexGrow: '1',
-  width: 'auto'
+  width: centralDimension.tabContent.aboutDeveloper.techStackContainer.itemWidth
  },
  techStackLogo: {
-  height: '106px'
+  height: centralDimension.tabContent.aboutDeveloper.techStackContainer.logoHeight
  },
  techStackItemContainer: {
   flexWrap: 'wrap',
   fontWeight: 'bold'
  },
  onlineConnectContainer: {
-  marginTop: '60px',
-  marginBottom: '20px',
+  marginTop: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.marginTop,
+  marginBottom: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.marginBottom,
   overflow: 'hidden'
  },
  onlineConnectHeading: {
   fontWeight: 'bold',
   textAlign: 'center',
-  fontSize: '30px',
-  marginBottom: '5px'
+  fontSize: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.fontSize,
+  marginBottom: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.headingMarginBottom
  },
  onlineConnectItem: {
   flexGrow: '1',
-  width: 'auto'
+  width: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.itemWidth
  },
  onlineConnectLogo: {
-  height: '50px',
-  margin: '3px'
+  height: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.logoHeight,
+  margin: centralDimension.tabContent.aboutDeveloper.onlineConnectContainer.logoMargin
  },
  onlineConnnectItemContainer: {
   flexWrap: 'wrap',
   fontWeight: 'bold'
  },
  sourceCodeContainer: {
-  marginTop: '60px',
-  marginBottom: '20px',
+  marginTop: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.marginTop,
+  marginBottom: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.marginBottom,
   overflow: 'hidden'
  },
  sourceCodeHeading: {
   fontWeight: 'bold',
   textAlign: 'center',
-  fontSize: '30px',
-  marginBottom: '5px'
+  fontSize: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.fontSize,
+  marginBottom: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.headingMarginBottom
  },
  sourceCodeItem: {
   flexGrow: '1',
-  width: 'auto'
+  width: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.itemWidth
  },
  sourceCodeLogo: {
-  height: '50px',
-  margin: '3px'
+  height: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.logoHeight,
+  margin: centralDimension.tabContent.aboutDeveloper.sourceCodeContainer.logoMargin
  },
  sourceCodeItemContainer: {
   flexWrap: 'wrap',
