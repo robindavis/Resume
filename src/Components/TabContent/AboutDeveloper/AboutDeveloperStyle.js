@@ -35,7 +35,6 @@ export const styles = {
   fontSize: '16px'
  },
  techStackContainer: {
-  width: '70%',
   marginTop: '60px',
   overflow: 'hidden'
  },
@@ -56,7 +55,6 @@ export const styles = {
   fontWeight: 'bold'
  },
  onlineConnectContainer: {
-  width: '30%',
   marginTop: '60px',
   marginBottom: '20px',
   overflow: 'hidden'
@@ -80,7 +78,6 @@ export const styles = {
   fontWeight: 'bold'
  },
  sourceCodeContainer: {
-  width: '15%',
   marginTop: '60px',
   marginBottom: '20px',
   overflow: 'hidden'
