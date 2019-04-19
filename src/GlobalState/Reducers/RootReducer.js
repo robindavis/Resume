@@ -4,7 +4,9 @@ import { isCurrentDesktopView } from '../../Utilities/DOM/IsCurrentDesktopView/I
 const initialState = {
   selectedTab: 'Home',
   isDesktop: isCurrentDesktopView(),
-  isSideBarOpened: false
+  isSideBarOpened: false,
+  isUserLoggedIn: false,
+  userInfo: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -20,6 +22,14 @@ const rootReducer = (state = initialState, action) => {
     case actionType.SIDEBAR_OPENED:
       {
         return Object.assign({}, state, {isSideBarOpened: action.isSideBarOpened});
+      }
+    case actionType.USER_LOGIN_STATUS:
+      {
+        return Object.assign({}, state, {isUserLoggedIn: action.isUserLoggedIn});
+      }
+    case actionType.USER_INFO:
+      {
+        return Object.assign({}, state, {userInfo: action.userInfo});
       }
     default:
       {

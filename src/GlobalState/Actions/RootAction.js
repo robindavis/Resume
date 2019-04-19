@@ -11,3 +11,11 @@ export const changeDesktopMobileView = (isDesktop) => {
 export const changeSideBarStatus = (isSideBarOpened) => {
   return { type: actionType.SIDEBAR_OPENED, isSideBarOpened: isSideBarOpened };
 };
+
+export const changeUserLogInStatus = (isUserLoggedIn) => {
+  return {type: actionType.USER_LOGIN_STATUS, isUserLoggedIn: isUserLoggedIn};
+};
+
+export const updateUserInfo = (userInfo) => {
+  return {type: actionType.USER_INFO, userInfo: userInfo};
+};

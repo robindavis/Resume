@@ -28,7 +28,7 @@ class Home extends Component {
     const arrowData =(this.props.isDesktop)?{arrowLeft:<ArrowBackIos className={classes.desktopArrow}/>,arrowRight:<ArrowForwardIos className={classes.desktopArrow}/>,addArrowClickHandler:true}:{arrowLeft:<ArrowBackIos className={classes.mobileArrow}/>,arrowRight:<ArrowForwardIos className={classes.mobileArrow}/>,addArrowClickHandler:true};
 		return (
 			<Paper className={classes.homeContainer}>
-				<Grid container item justify="center" alignItems="center" direction="column" style={{border: '1px solid black'}}>
+				<Grid container item justify="center" alignItems="center" direction="column">
           <div className={classes.headingTitle}>Welcome to Resume Builder</div>
           <div className={classes.headingDescription}>
             Resumes are used to make a favorable impression on a prospective employer. Your resume is often the first impression a potential employer has of you. For this reason, it is often referred to as one of the most crucial steps taken during a job search.

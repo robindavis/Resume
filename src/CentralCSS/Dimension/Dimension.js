@@ -50,6 +50,18 @@ export const centralDimension = {
         logoHeight: '50px',
         logoMargin: '3px'
       }
+    },
+    createProfile: {
+      profilePhotoContainer: {
+        width: 'auto',
+        marginTop: '10px',
+        profileWidth: '100px',
+        profileHeight: '100px'
+      },
+      formContainerContainer: {
+        width: 'auto',
+        marginTop: '10px'
+      }
     }
   }
 };

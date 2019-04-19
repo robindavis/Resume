@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { connect } from 'react-redux';
 
 import { styles } from './UserLoginMenuStyle';
 
@@ -25,11 +26,20 @@ class UserLoginMenu extends Component {
         onClose = { this.props.handleClose }
         className={classes.userLoginMenuContainer}
       >
-        <MenuItem onClick={this.props.handleClose}>Hi Guest</MenuItem>
-        <MenuItem onClick={this.props.handleClose}>Sign In</MenuItem>
+      {(this.props.isUserLoggedIn) ?
+        <MenuItem onClick={e=>this.props.handleClose('signOut')}>Sign Out</MenuItem>
+        :
+        <MenuItem onClick={e=>this.props.handleClose('logIn')}>Log In</MenuItem>
+      }
       </Menu>
     );
   }
 }
 
-export default withStyles(styles)(UserLoginMenu);
+const mapStateToProps = (state, props) => {
+  return {
+    isUserLoggedIn: state.isUserLoggedIn
+  };
+};
+
+export default connect(mapStateToProps)(withStyles(styles)(UserLoginMenu));

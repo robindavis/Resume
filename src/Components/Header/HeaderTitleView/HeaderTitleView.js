@@ -7,6 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
+import UserAuthenticateDialog from '../../UserAuthenticateDialog/UserAuthenticateDialog';
+import Fire from '../../../Firebase/FirebaseConfig';
 import UserLoginMenu from '../UserLoginMenu/UserLoginMenu';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
 import { styles } from './HeaderTitleViewStyle';
@@ -15,7 +17,8 @@ class HeaderTitleView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      anchorEl: null
+      anchorEl: null,
+      loginDialogOpen: false
     };
   }
 
@@ -23,8 +26,17 @@ class HeaderTitleView extends Component {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleUserLoginMenuClose = () => {
+  handleLoginDialogOpenClose = () => {
+    this.setState((state)=> ({ loginDialogOpen: !state.loginDialogOpen }));
+  };
+
+  handleUserLoginMenuClose = (userClickEvent) => {
     this.setState({ anchorEl: null });
+    if(userClickEvent==="signOut") {
+      Fire.auth().signOut();
+    } else if(userClickEvent==="logIn") {
+      this.setState({loginDialogOpen: true});
+    }
   };
 
   toggleSidebarNavigation = () => {
@@ -34,6 +46,7 @@ class HeaderTitleView extends Component {
   render() {
     const { classes } = this.props;
     return (
+      <>
       <AppBar
         position="static"
         className={classes.titleBarContainer}
@@ -65,6 +78,8 @@ class HeaderTitleView extends Component {
           />
         </Toolbar>
       </AppBar>
+      {this.state.loginDialogOpen && <UserAuthenticateDialog handleLoginDialogOpenClose={this.handleLoginDialogOpenClose} open={this.state.loginDialogOpen}/>}
+      </>
     );
   }
 }
