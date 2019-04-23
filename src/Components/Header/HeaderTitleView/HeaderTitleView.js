@@ -8,7 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import UserAuthenticateDialog from '../../UserAuthenticateDialog/UserAuthenticateDialog';
-import Fire from '../../../Firebase/FirebaseConfig';
+import { fireAuth } from '../../../Firebase/FirebaseConfig';
 import UserLoginMenu from '../UserLoginMenu/UserLoginMenu';
 import * as RootAction from '../../../GlobalState/Actions/RootAction';
 import { styles } from './HeaderTitleViewStyle';
@@ -33,7 +33,7 @@ class HeaderTitleView extends Component {
   handleUserLoginMenuClose = (userClickEvent) => {
     this.setState({ anchorEl: null });
     if(userClickEvent==="signOut") {
-      Fire.auth().signOut();
+      fireAuth.signOut();
     } else if(userClickEvent==="logIn") {
       this.setState({loginDialogOpen: true});
     }

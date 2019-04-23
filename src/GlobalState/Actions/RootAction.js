@@ -19,3 +19,11 @@ export const changeUserLogInStatus = (isUserLoggedIn) => {
 export const updateUserInfo = (userInfo) => {
   return {type: actionType.USER_INFO, userInfo: userInfo};
 };
+
+export const updateUserProfileSettings = (userProfileSettings) => {
+  return {type: actionType.USER_PROFILE_SETTINGS, userProfileSettings: userProfileSettings};
+};
+
+export const updateSiteInfo = (siteInfoData) => {
+  return {type: actionType.SITE_INFO, siteInfoData: siteInfoData};
+};

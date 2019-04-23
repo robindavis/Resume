@@ -6,7 +6,9 @@ const initialState = {
   isDesktop: isCurrentDesktopView(),
   isSideBarOpened: false,
   isUserLoggedIn: false,
-  userInfo: null
+  userInfo: null,
+  userProfileSettings: {},
+  siteInfoData: {}
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -30,6 +32,14 @@ const rootReducer = (state = initialState, action) => {
     case actionType.USER_INFO:
       {
         return Object.assign({}, state, {userInfo: action.userInfo});
+      }
+    case actionType.USER_PROFILE_SETTINGS:
+      {
+        return Object.assign({}, state, {userProfileSettings: action.userProfileSettings});
+      }
+    case actionType.SITE_INFO:
+      {
+        return Object.assign({}, state, {siteInfoData: action.siteInfoData});
       }
     default:
       {

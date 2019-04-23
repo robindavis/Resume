@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
-import Fire from '../../Firebase/FirebaseConfig';
+import { fireAuth } from '../../Firebase/FirebaseConfig';
 import { styles } from './LoginFormStyle';
 
 class LoginForm extends Component {
@@ -18,7 +18,7 @@ class LoginForm extends Component {
 
   login= event => {
     event.preventDefault();
-    Fire.auth().signInWithEmailAndPassword(this.state.email,this.state.pass).then(user=> {
+    fireAuth.signInWithEmailAndPassword(this.state.email,this.state.pass).then(user=> {
       // Do something once user is logged in
       this.props.handleLoginDialogOpenClose();
     }).catch(error=> {

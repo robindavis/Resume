@@ -48,5 +48,41 @@ contactContainer: {
 },
 buttonContainer: {
   marginTop: '20px'
+},
+formMessageContainer: {
+  width: '90%',
+  maxWidth: '350px',
+  marginTop: '20px',
+  border: '1px solid green',
+  color: 'green',
+  fontSize: '25px',
+  textAlign: 'center',
+  padding: '10px'
+},
+formMessageIcon: {
+  fontSize: '60px'
+},
+formMessage: {
+  fontSize: '20px'
+},
+formMessageButton: {
+  marginTop: '20px'
+},
+imageSizeDialogHeading: {
+  backgroundColor: 'orange',
+  textAlign: 'center',
+  border: '1px solid red',
+},
+imageSizeDialogIcon: {
+  fontSize: '60px'
+},
+imageSizeDialogWrapper: {
+  fontWeight: 'bold',
+  color: 'red',
+  fontSize: '20px'
+},
+imageSizeDialogNote: {
+  fontSize: '18px',
+  color: 'green'
 }
 };

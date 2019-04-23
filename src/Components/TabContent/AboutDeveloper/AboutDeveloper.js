@@ -7,7 +7,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
 
 import { getElapsedYearCount } from '../../../Utilities/Time/ElapsedTimeCount/ElapsedTimeCount';
-import profileLogo from '../../../Images/DeveloperImage/Profile.JPG';
+import profileLogo from '../../../Images/DeveloperImage/Profile.jpg';
 import FirebaseLogo from '../../../Images/FirebaseLogo/FirebaseLogo.png';
 import MaterialUILogo from '../../../Images/MaterialUILogo/MaterialUILogo.png';
 import NPMLogo from '../../../Images/NPMLogo/NPMLogo.png';
