@@ -14,5 +14,8 @@ iconContainer: {
 },
 button: {
   marginTop: '20px'
+},
+errorMessage: {
+  width: 'inherit'
 }
 };

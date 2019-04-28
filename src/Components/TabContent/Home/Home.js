@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
@@ -27,7 +26,7 @@ class Home extends Component {
 		const { classes } = this.props;
     const arrowData =(this.props.isDesktop)?{arrowLeft:<ArrowBackIos className={classes.desktopArrow}/>,arrowRight:<ArrowForwardIos className={classes.desktopArrow}/>,addArrowClickHandler:true}:{arrowLeft:<ArrowBackIos className={classes.mobileArrow}/>,arrowRight:<ArrowForwardIos className={classes.mobileArrow}/>,addArrowClickHandler:true};
 		return (
-			<Paper className={classes.homeContainer}>
+			<Grid container item  justify="center" alignItems="center" className={classes.homeContainer}>
 				<Grid container item justify="center" alignItems="center" direction="column">
           <div className={classes.headingTitle}>Welcome to Resume Builder</div>
           <div className={classes.headingDescription}>
@@ -57,20 +56,21 @@ class Home extends Component {
             User Activity Status
           </div>
           <div className={classes.siteInfo}>
-            Total Profiles Created: 0
+            Total Profiles Created: {this.props.siteInfoData.TotalResumes}
             <br/>
             <br/>
             Number of Users Logged In: 0
           </div>
         </Grid>
-			</Paper>
+			</Grid>
 			);
 	}
 }
 
 const mapStateToProps = (state, props) => {
   return {
-    isDesktop: state.isDesktop
+    isDesktop: state.isDesktop,
+    siteInfoData: state.siteInfoData
   };
 };
 

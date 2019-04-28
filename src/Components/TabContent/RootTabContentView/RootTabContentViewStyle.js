@@ -1,5 +1,6 @@
 export const styles = {
 	'rootTabContentView': {
-    overflow: 'auto'
+    overflow: 'auto',
+    backgroundColor: '#fff176'
   }
 };

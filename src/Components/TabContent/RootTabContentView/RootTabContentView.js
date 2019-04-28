@@ -53,6 +53,7 @@ class RootTabContentView extends Component {
       <Grid
         container
         item
+        justify="center"
         className={classes.rootTabContentView}
         style={
           {flex:this.props.isDesktop?'1':'1'}

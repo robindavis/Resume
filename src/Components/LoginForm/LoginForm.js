@@ -20,7 +20,7 @@ class LoginForm extends Component {
     event.preventDefault();
     fireAuth.signInWithEmailAndPassword(this.state.email,this.state.pass).then(user=> {
       // Do something once user is logged in
-      this.props.handleLoginDialogOpenClose();
+      this.props.handleLoginDialogOpenClose("success",user.user.uid);
     }).catch(error=> {
       console.log(error);
     });

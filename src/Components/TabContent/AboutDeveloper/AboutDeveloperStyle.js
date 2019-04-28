@@ -5,8 +5,8 @@ export const styles = {
   AboutDeveloper: {
     width: centralDimension.tabContent.aboutDeveloper.outerMainContainer.width,
     fontSize: centralDimension.tabContent.aboutDeveloper.outerMainContainer.fontSize,
-    backgroundColor: centralColor.tabContent.aboutDeveloper.backgroundColor,
-    color: centralColor.tabContent.aboutDeveloper.textColor
+    color: centralColor.tabContent.aboutDeveloper.textColor,
+    alignSelf: 'flex-start'
   },
  avatar: {
   width: centralDimension.tabContent.aboutDeveloper.avatarContainer.profileWidth,

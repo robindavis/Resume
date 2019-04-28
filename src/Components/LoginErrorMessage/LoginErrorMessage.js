@@ -13,7 +13,7 @@ class LoginErrorMessage extends Component {
       <Grid container item justify="center" alignItems="center" direction="column">
         <Grid container direction="column" alignItems="center" className={classes.loginMessageContainer}>
         <Warning  className={classes.iconContainer}/>
-        Please Login to {this.props.tabName}
+        <div className={classes.errorMessage}>Please Login to {this.props.tabName}</div>
         </Grid>
         <Button variant="contained" color="primary" className={classes.button} onClick={this.props.handleLoginDialogOpenClose}>
           Login
